@@ -3,6 +3,7 @@ package net.benji.bbuild.gui;
 import java.io.IOException;
 
 import net.benji.bbuild.module.Module;
+import net.benji.bbuild.util.font.FontUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 
@@ -21,7 +22,7 @@ public class Button {
 	}
 	public void drawScreen(int mouseX, int mouseY, float partialTicks,int offset) {
 		Gui.drawRect(parent.x, parent.y + offset, parent.x + parent.width, parent.y + offset + parent.barheight, module.isToggled() ? 0x70010101 : 0x40010101);
-		Minecraft.getMinecraft().fontRenderer.drawStringWithShadow(module.getName(), parent.x + 2, parent.y + offset + 2, -1);
+		FontUtil.normal.drawString(module.getName(), parent.x + 2, parent.y + offset + 2, -1);
 	}
 
 	protected void keyTyped(char typedChar, int keyCode) throws IOException {

@@ -5,6 +5,7 @@ import net.benji.bbuild.module.ModuleManager;
 import net.benji.bbuild.proxy.CommonProxy;
 import net.benji.bbuild.setting.SettingsManager;
 import net.benji.bbuild.util.Reference;
+import net.benji.bbuild.util.font.FontUtil;
 import net.minecraft.init.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -43,5 +44,6 @@ public class BBuild
         MinecraftForge.EVENT_BUS.register(instance);
         moduleManager = new ModuleManager();
         clickGui = new ClickGui();
+        FontUtil.bootstrap();
     }
 }

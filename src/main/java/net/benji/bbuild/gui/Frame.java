@@ -1,8 +1,11 @@
 package net.benji.bbuild.gui;
 
+import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import net.benji.bbuild.util.font.CFont;
+import net.benji.bbuild.util.font.FontUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.util.text.TextFormatting;
@@ -46,7 +49,7 @@ public class Frame {
 	}
 	public void drawScreen(int mouseX, int mouseY, float partialTicks) {
 		Gui.drawRect(x, y, x + width, y + barheight, 0x70010101);
-		Minecraft.getMinecraft().fontRenderer.drawStringWithShadow(TextFormatting.BLUE + name, x +2 , y + 2, -1);
+		FontUtil.normal.drawString(TextFormatting.BLUE + name, x +2 , y + 2, -1);
 		offset = barheight; 
 		for(Button b : buttons)
 		{
