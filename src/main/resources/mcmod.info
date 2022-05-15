@@ -1,0 +1,15 @@
+[
+{
+  "modid": "bbd",
+  "name": "BBuild",
+  "description": "A god tier utility mod for builders",
+  "version": "0.1.0",
+  "mcversion": "1.12.2",
+  "updateUrl": "",
+  "authorList": ["Benji"],
+  "credits": "Jacktherippa for making amazing builds that inspired me to make a client for builders.",
+  "logoFile": "icon.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]
