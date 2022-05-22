@@ -6,18 +6,32 @@ import net.minecraft.client.Minecraft;
 import org.lwjgl.input.Keyboard;
 
 public class Fly extends Module {
+    public static float flyHackSpeed = 0.1f;
     public Fly()
     {
         super("Fly", Keyboard.KEY_F, Category.MOVEMENT);
     }
-    public void onEnable()
+    Minecraft mc = Minecraft.getMinecraft();
+    public void update()
     {
-        Minecraft.getMinecraft().player.capabilities.isFlying = true;
-        Minecraft.getMinecraft().player.capabilities.allowFlying = true;
+        if(this.isToggled()){
+            mc.player.capabilities.isFlying = true;
+            if(mc.gameSettings.keyBindJump.isPressed()){
+                mc.player.motionY += 0.2f;
+            }
+            if(mc.gameSettings.keyBindSneak.isPressed()){
+                mc.player.motionY -= 0.2f;
+            }
+            if(mc.gameSettings.keyBindForward.isPressed()) {
+                mc.player.capabilities.setFlySpeed(flyHackSpeed);
+            }
+            super.onDisable();
+        }
+
     }
     public void onDisable()
     {
         Minecraft.getMinecraft().player.capabilities.isFlying = false;
-        Minecraft.getMinecraft().player.capabilities.allowFlying = false;
+        super.onDisable();
     }
 }

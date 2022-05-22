@@ -34,7 +34,7 @@ public class Button {
 		{
 			if(bounding(mouseX, mouseY))
 			{
-				//module.toggle();
+				module.toggle();
 			}
 		}
 	}

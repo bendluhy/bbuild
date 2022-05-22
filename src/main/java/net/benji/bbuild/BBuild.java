@@ -6,6 +6,7 @@ import net.benji.bbuild.proxy.CommonProxy;
 import net.benji.bbuild.setting.SettingsManager;
 import net.benji.bbuild.util.Reference;
 import net.benji.bbuild.util.font.FontUtil;
+import net.minecraft.client.Minecraft;
 import net.minecraft.init.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -21,6 +22,7 @@ import java.sql.Ref;
 @Mod(modid = Reference.MOD_ID, name = Reference.NAME)
 public class BBuild
 {
+    //GAMERBOY4LIFE ON YT GOOD TUTS
     @Instance
     public static BBuild instance = new BBuild();
     public static ModuleManager moduleManager;
@@ -31,7 +33,7 @@ public class BBuild
     public static CommonProxy proxy;
     public static ClickGui clickGui;
     private static Logger logger;
-
+    public static Minecraft mc = Minecraft.getMinecraft();
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
@@ -42,8 +44,12 @@ public class BBuild
     public void init(FMLInitializationEvent event)
     {
         MinecraftForge.EVENT_BUS.register(instance);
+
+        //Click Gui and Module Manager
         moduleManager = new ModuleManager();
         clickGui = new ClickGui();
+
+        //Initialize Custom Font Renderer
         FontUtil.bootstrap();
     }
 }

@@ -1,9 +1,11 @@
 package net.benji.bbuild.module;
 
 import net.benji.bbuild.module.modules.client.ClickGuiModule;
-import net.benji.bbuild.module.modules.movement.Fly;
-import net.benji.bbuild.module.modules.movement.Sprint;
+import net.benji.bbuild.module.modules.combat.KillAura;
+import net.benji.bbuild.module.modules.movement.*;
 import net.benji.bbuild.module.modules.player.Freecam;
+import net.benji.bbuild.module.modules.player.NoFall;
+import net.benji.bbuild.module.modules.render.FullBright;
 import net.minecraftforge.client.event.RenderWorldLastEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -27,8 +29,14 @@ public class ModuleManager {
         //Where to add module
         modules.add(new Fly());
         modules.add(new Sprint());
+        modules.add(new KillAura());
         modules.add(new ClickGuiModule());
         modules.add(new Freecam());
+        modules.add(new FullBright());
+        modules.add(new Step());
+        modules.add(new Dolphin());
+        modules.add(new Glide());
+        modules.add(new NoFall());
     }
     public ArrayList<Module> getModules()
     {
